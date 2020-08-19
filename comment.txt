@@ -1,0 +1,10 @@
+Memory initialization is wrong. In presentation(slide 8) it is stated 
+that arguments of a program are being initialized staring from memory 
+address (or cell) 1. Where is in URM machine emulator arguments are put 
+in memory starting with cell 0. 
+Exact line:
+https://github.com/gzholtkevych/Programming-Theory/blob/master/urm/engine.py#L43
+
+It should be changed to:
+mem = list(args)
+mem.insert(0, 0)
